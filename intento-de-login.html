@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE - Alura Latam - Ejercicio intento de login</title>
+  </head>
+  <body>
+    <script>
+      function enter() {
+        document.write("<br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+        enter();
+      }
+      var inicioDeSesionRegistrado = "alura";
+      var contrasenhaRegistrada = "alura321";
+
+      // var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+      // var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+      var intentos = 1;
+      for (intentos = 1; intentos <= 3; intentos++) {
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+        if (
+          inicioDeSesionRegistrado == inicioDeSesionIngresado &&
+          contrasenhaRegistrada == contrasenhaIngresada
+        ) {
+          alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+          imprimir("ESTAS DENTRO");
+          break;
+        } else {
+          if (intentos == 3) {
+            alert("TE QUEDAS SIN INTENTOS PARA INICIAR SESION");
+          } else {
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

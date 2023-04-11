@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ONE - Alura Latam - Implementacion de tags de HTML con JS con un array de
+      opciones con la funcion push
+    </title>
+  </head>
+  <body>
+    <input type="text" />
+    <button>Verificar valor</button>
+
+    <script>
+      function aleatorio() {
+        return Math.round(Math.random() * 10);
+      }
+
+      function numeros(n) {
+        var secretos = [];
+        var i = 1;
+        while (i <= n) {
+          var nrandom = aleatorio();
+          var encontrado = false;
+          if (nrandom != 0) {
+            for (var pos = 0; pos < secretos.length; pos++) {
+              if (nrandom == secretos[pos]) {
+                encontrado = true;
+                break;
+              }
+            }
+            if (encontrado == false) {
+              secretos.push(nrandom);
+              i++;
+            }
+          }
+        }
+        return secretos;
+      }
+
+      var secretos = numeros(4);
+      console.log(secretos);
+
+      var input = document.querySelector("input");
+      input.focus();
+
+      function verificar() {
+        var encontrado = false;
+        for (var pos = 0; pos <= secretos.length; pos++) {
+          if (parseInt(input.value) == secretos[pos]) {
+            alert("Valor correcto");
+            encontrado = true;
+            break;
+          }
+        }
+        if (encontrado == false) {
+          alert("No encontrado");
+        }
+        input.value = "";
+        input.focus();
+      }
+
+      var button = document.querySelector("button");
+      button.onclick = verificar;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE - Alura Latam - Calcular el promedio de edades</title>
+  </head>
+  <body>
+    <script>
+      function enter() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+        enter();
+      }
+
+      var usuarios = parseInt(
+        prompt("Ingrese la cantidad de personas que conforman su familia:")
+      );
+
+      var i = 0;
+      var edades = 0;
+      var edad = 0;
+
+      for (i = 1; i <= usuarios; i++) {
+        edad = parseInt(prompt("Ingrese la edad de la persona numero: " + i));
+        imprimir("La persona #" + i + " tiene :" + edad + " años");
+        edades += edad;
+      }
+      var promedio = edades / usuarios;
+      // imprimir(edades);
+
+      imprimir(
+        "Promedio de edad de las " + usuarios + " personas es: " + promedio
+      );
+    </script>
+  </body>
+</html>

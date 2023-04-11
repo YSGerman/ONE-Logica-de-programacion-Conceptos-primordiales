@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE - Alura Latam - Ejercicio asteriscos</title>
+  </head>
+  <body>
+    <script>
+      function enter() {
+        document.write("<br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+        enter();
+      }
+      var filas = 1;
+      var columnas = 1;
+      var fu = parseInt(prompt("Cuantas filas quiere imprimir?"));
+      var cu = parseInt(prompt("Cuantas columnas quiere imprimir?"));
+
+      for (filas = 1; filas <= fu; filas++) {
+        for (columnas = 1; columnas <= cu; columnas++) {
+          document.write("*");
+        }
+        enter();
+      }
+    </script>
+  </body>
+</html>

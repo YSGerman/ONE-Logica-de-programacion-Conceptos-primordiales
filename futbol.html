@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE - Alura Latam - Puntuacion de una liga de futbol</title>
+  </head>
+  <body>
+    <script>
+      function enter() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+        enter();
+      }
+
+      var nombre = prompt("Ingrese el nombre del equipo");
+      // parseInt para convertir texto en int
+      var victorias = parseInt(prompt("Cuantas victorias ha tenido " + nombre));
+      var empates = parseInt(prompt("Cuantos empates ha tenido " + nombre));
+      var lastYear = parseInt(
+        prompt("Cuantos puntos tuvo: " + nombre + ", el año pasado")
+      );
+      puntos = victorias * 3 + empates;
+
+      imprimir(
+        "El equipo: " + nombre + ", tiene un total de: " + puntos + " puntos"
+      );
+
+      if (puntos < lastYear) {
+        imprimir("El equipo tuvo mejor puntuacion el año pasado");
+      }
+      if (puntos > lastYear) {
+        imprimir("El equipo tuvo mejor puntuacion este año");
+      }
+      if (puntos == lastYear) {
+        imprimir("El equipo tiene la misma puntuacion que el año pasado");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ONE - Alura Latam - Adivinar un numero usando la funcion random
+    </title>
+  </head>
+  <body>
+    <script>
+      function enter() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+        enter();
+      }
+
+      function sorteo(n) {
+        return Math.round(Math.random() * n);
+      }
+
+      var nrandom = parseInt(
+        prompt(
+          "Este juego creara un numero random entre el 0 y el numero que ingreses a continuacion "
+        )
+      );
+
+      var nr = nrandom;
+      nrandom = sorteo(nrandom);
+
+      var intentos = 3;
+      var i = 1;
+      while (i <= intentos) {
+        var numero = parseInt(prompt("Ingresa un numero del 1 al " + nr));
+        if (numero == nrandom) {
+          imprimir("ADIVINASTE EL NUMERO");
+          break;
+        } else {
+          imprimir("Intento #" + i + " Numero equivocado");
+        }
+        i++;
+      }
+      imprimir("El numero aleatorio era: " + nrandom);
+    </script>
+  </body>
+</html>

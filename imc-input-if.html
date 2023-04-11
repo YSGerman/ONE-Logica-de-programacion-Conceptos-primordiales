@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE - Alura Latam - Calcular IMC con datos pedidos al usuario</title>
+  </head>
+  <body>
+    <script>
+      function imprimir(texto) {
+        document.write(texto);
+        saltarLinea();
+      }
+
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function calcularIMC(peso, altura) {
+        return peso / (altura * altura);
+      }
+
+      // PEDIR INFORMACION DEL USARIO DESDE UN ALERT
+      var nombre = prompt("Ingresa tu nombre");
+      var peso = prompt(nombre + " Ingresa tu peso: ");
+      var altura = prompt(nombre + " Ingresa tu altura: ");
+
+      imc = calcularIMC(peso, altura);
+
+      imprimir("El IMC calculado de: " + nombre + " es: " + imc);
+
+      if (imc <= 18.5) {
+        imprimir("Ese IMC indica que esta abajo del peso recomendado");
+      }
+      if (imc >= 18.6 && imc <= 24.9) {
+        imprimir("Ese IMC indica que esta en el peso recomendado");
+      }
+      if (imc >= 25 && imc <= 29.9) {
+        imprimir("Ese IMC indica que es una persona con sobrepeso");
+      }
+      if (imc >= 30) {
+        imprimir("Ese IMC indica que es una persona con obesidad");
+      }
+    </script>
+  </body>
+</html>
